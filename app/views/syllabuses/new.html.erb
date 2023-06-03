@@ -1,0 +1,31 @@
+<%= render partial: "shared/navigation" %>
+
+<h1>Add Module for <i><%= Course.find(params[:course_id]).cname %></i></h1>
+<h3 style="text-align: center;" >In case of more than one module, please add one by one.</h3>
+<%= form_with model: @syllabus do |form| %>
+    <% count = Syllabus.where(course_id: params[:course_id]).count %>
+    <% count += 1 %>
+    <table class="form-table">
+        <tr>
+            <td>Module Number: </td>
+            <td>
+                <%= count %>
+                <%= form.hidden_field :module_no, value: count %>
+                <%= form.hidden_field :course_id, value: params[:course_id] %>
+            </td>
+        </tr>
+        <tr>
+            <td><%= form.label :moudle_name, "Enter Module Name: " %></td>
+            <td><%= form.text_field :moudle_name %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :video_link, "Enter Module Link: " %></td>
+            <td><%= form.text_field :video_link %></td>
+        </tr>
+        <tr>
+            <td class="button-centre"><%= form.submit class: "button" %></td>
+            <% @user = User.find_by(id: session[:user_id]) %>
+            <td class="button-centre"><%= link_to "Return Dashboard", @user ,class: "button-link" %></td>
+        </tr>
+    </table>
+<% end %>

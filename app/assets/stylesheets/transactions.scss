@@ -1,0 +1,15 @@
+// Place all the styles related to the Transactions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.course-buy-table th {
+  background-color: orange;
+}
+
+.course-buy-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.course-buy-table tr:nth-child(even) {
+  background-color: #ffffff;
+}

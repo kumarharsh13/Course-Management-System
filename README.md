@@ -1,24 +1,67 @@
-# README
+# Course Management System Using Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Output ScreenShot
 
-Things you may want to cover:
+<br>
 
-* Ruby version
+### Welcome Page:
 
-* System dependencies
+<img src="app/assets/images/ScreenShot/WelcomePage.png">
 
-* Configuration
+<br>
 
-* Database creation
+### Sign Up:
 
-* Database initialization
+<img src="app/assets/images/ScreenShot/SignUp.png">
 
-* How to run the test suite
+<br>
 
-* Services (job queues, cache servers, search engines, etc.)
+### Sign In:
 
-* Deployment instructions
+<img src="app/assets/images/ScreenShot/SignIn.png">
 
-* ...
+<br>
+
+<br>
+
+### Dashboard:
+
+<img src="app/assets/images/ScreenShot/Dashboard.png">
+
+<br>
+
+### Course Available:
+
+<img src="app/assets/images/ScreenShot/BuyCourse.png">
+
+<br>
+
+### Course Published:
+
+<img src="app/assets/images/ScreenShot/PublishCourse.png">
+
+<br>
+
+### Course Bought:
+
+<img src="app/assets/images/ScreenShot/CourseBought.png">
+
+<br>
+
+### Course Module:
+
+<img src="app/assets/images/ScreenShot/Syllabus.png">
+
+<br>
+
+<br>
+
+### Create Module:
+
+<img src="app/assets/images/ScreenShot/Module.png">
+
+<br>
+
+### Editing Profile:
+
+<img src="app/assets/images/ScreenShot/EditProfile.png">

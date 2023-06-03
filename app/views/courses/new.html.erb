@@ -1,0 +1,36 @@
+<%= render partial: "shared/navigation" %>
+<h1>Enter your Course details</h1>
+<%= form_with model: @course do |form| %>
+    <table class="form-table">
+        <tr>
+            <td><%= form.label :cname, "Enter Course Name: " %></td>
+            <td><%= form.text_field :cname, placeholder: "C++ Fundamentals" %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :description, "Enter Course Description: " %></td>
+            <td><%= form.text_area :description, placeholder: "Write about your course here." %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :price, "Enter Course Price: " %></td>
+            <td><%= form.number_field :price, placeholder: "45 (i.e., $45)" %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :duration, "Enter Course Duration: " %></td>
+            <td><%= form.number_field :duration, placeholder: "12 (i.e., Twelve Hours)" %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :rating, "Enter Course Rating " %></td>
+            <td><%= form.number_field :rating, placeholder: "4.2" %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :category, "Enter Course Category: " %></td>
+            <td><%= form.text_field :category, placeholder: "Programming, Cooking, etc." %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :validity, "Enter Course Validity: " %></td>
+            <td><%= form.number_field :validity, placeholder: "30 (i.e., Thirty Days)" %></td>
+        </tr>
+        <%= form.hidden_field :drafting_status, value: "1" %>
+        <tr><td colspan="2" class="button-centre"><%= form.submit "Create Course", class: "button"  %></td></tr>
+    </table>
+<% end %>

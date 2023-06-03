@@ -1,0 +1,32 @@
+<style>
+    th,td{
+        text-align: center;
+    }
+</style>
+<%= render partial: "shared/navigation" %>
+<h1>Modules of <i><%= Course.find(params[:course_id]).cname %></i></h1>
+<table class="syllabus-module-table">
+    <tr>
+        <th>Module Number</th>
+        <th>Module Name</th>
+        <th>Study Link</th>
+    </tr>
+    <% syllabus = Syllabus.where(course_id: params[:course_id]) %>
+    <% if syllabus.count != 0 %>
+        <% (syllabus).each do |i|%>
+            <tr> 
+                <td><%= i.module_no %></td>
+                <td><%= i.moudle_name %></td>
+                <td><a href="<%= i.video_link %>" class="button" >Click Here</a></td>
+            </tr>
+        <% end %>
+    <% else %>
+        <tr>
+        <td colspan="3">
+            <div class="nothing">
+                <h4>Publisher havetn't added anything </h4>
+            </div>
+        </td>
+        </tr>
+    <% end %>
+</table>

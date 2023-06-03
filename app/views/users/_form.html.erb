@@ -1,0 +1,21 @@
+<%= form_with model: user do |form| %>
+    <table class="form-table">
+        <tr>
+            <td><%= form.label :uname, "Enter Your Name: " %></td>
+            <td><%= form.text_field :uname, placeholder: "Steve Rogers" %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :email, "Enter Your Email: " %></td>
+            <td><%= form.email_field :email, placeholder: "rogerssteve@example.com" %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :password, "Enter Your Password: " %></td>
+            <td><%= form.password_field :password, placeholder: "**********" %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :contact, "Enter Your Contact: " %></td>
+            <td><%= form.text_field :contact, placeholder: "9878765454" %></td>
+        </tr>
+        <tr><td colspan="2" class="button-centre"><%= form.submit class: "button" %></td></tr>
+    </table>
+<% end %>

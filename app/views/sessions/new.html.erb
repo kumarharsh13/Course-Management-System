@@ -1,0 +1,15 @@
+<h1>Welcome to Sign In Page</h1>
+
+<%= form_with scope: :session, url: login_path do |form| %>
+    <table class="form-table">
+        <tr>
+            <td><%= form.label :email, "Enter Your Email: " %></td>
+            <td><%= form.email_field :email, placeholder: "rogerssteve@example.com" %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :password, "Enter Your Password: " %></td>
+            <td><%= form.password_field :password, placeholder: "**********" %></td>
+        </tr>
+        <tr><td colspan="2" class="button-centre"><%= form.submit "Sign In", class: "button" %></td></tr>
+    </table>
+<% end %>

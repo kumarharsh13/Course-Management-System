@@ -1,0 +1,39 @@
+<style>
+    th,td{
+        text-align: center;
+    }
+</style>
+<%= render partial: "shared/navigation" %>
+<h2 class="second-header">List of Courses Available</h2>
+    <table class="course-buy-table">
+        <tr>
+            <th>Course Name</th>
+            <th>Course Rating</th>
+            <th>Course Price</th>
+            <th>Course Published On</th>
+            <th>Course Validity</th>
+            <th>Click To Buy</th>
+        </tr>
+        <% course = Course.all%>
+        <% if course.count != 0%>
+            <% count = 1 %>
+            <% (course).each do |i|%>
+                <% if i.drafting_status == true %>
+                    <tr> 
+                        <td><%= i.cname %></td>
+                        <td><%= i.rating %></td>
+                        <td><%= i.price %></td>
+                        <td><%= i.created_at %></td>
+                        <td><%= i.validity %> days</td>
+                        <td><%= button_to "Click Here", {:controller => "transactions", :action => "create", :user_id => session[:user_id], :course_id => i.id, :total_amount => i.price, :payment_status => true,} , :method => :post, class: "button"  %></td>
+                    </tr>
+                <% end %>
+            <% end %>
+        <% else %>
+            <tr>
+                <td colspan="6">
+                    <h4>No Courses are available</h4>
+                </td>
+            </tr>
+        <% end %>
+    </table>

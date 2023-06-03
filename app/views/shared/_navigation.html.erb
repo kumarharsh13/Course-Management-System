@@ -1,0 +1,19 @@
+<header>
+    <% @user = User.find_by(id: session[:user_id]) %>
+    <div class="main-header">
+        <div class="left-header">
+            <nav>
+                <ul class="nav-list">
+                    <li><%= link_to "Home", @user %></li>
+                    <li><%= link_to "Publish Course", new_course_path %></li>
+                    <li><%= link_to "Buy Course", new_transaction_path %></li>
+                    <li><%= link_to "Edit Profile", edit_user_path(@user.id) %></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="right-header">
+            <span>Hello, <i><%= @user.uname %></i></span>
+            <span><%= link_to "Sign Out", logout_url %></span>
+        </div>
+    </div>
+</header>
