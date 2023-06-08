@@ -1,0 +1,37 @@
+<style>
+    th,td{
+        text-align: center;
+    }
+</style>
+<%= render partial: "shared/navigation" %>
+<h1>Your Purchase Histroy</h1>
+<table class="transaction-module-table">
+    <tr>
+        <th>S.No.:</th>
+        <th>Course Name</th>
+        <th>Amount Paid</th>
+        <th>Purchase Date</th>
+    </tr>
+    <% transaction = Transaction.where(user_id: session[:user_id]) %>
+    <% if transaction.count != 0 %>
+        <% count = 1%>
+        <% (transaction).each do |i|%>
+            <tr> 
+                <td><%= count %></td>
+                <% count +=1 %>
+                <td><%= Course.find_by(id: i.course_id).cname %></td>
+                <td><%= i.total_amount %></td>
+                <td><%= i.created_at %></td>
+            </tr>
+        <% end %>
+    <% else %>
+        <tr>
+        <td colspan="4">
+            <div class="nothing">
+                <h4>No Transactions Available</h4>
+                <p>To buy a course visit <%= link_to "Buy Course", new_transaction_path %></p>
+            </div>
+        </td>
+        </tr>
+    <% end %>
+</table>

@@ -10,6 +10,18 @@
   background-color: #f2f2f2;
 }
 
-.course-buy-table tr:nth-child(even) {
+.course-buy-table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.transaction-module-table th {
+  background-color: orange;
+}
+
+.transaction-module-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.transaction-module-table tr:nth-child(odd) {
   background-color: #ffffff;
 }

@@ -8,6 +8,7 @@
                     <li><%= link_to "Publish Course", new_course_path %></li>
                     <li><%= link_to "Buy Course", new_transaction_path %></li>
                     <li><%= link_to "Edit Profile", edit_user_path(@user.id) %></li>
+                    <li><%= link_to "My Orders", transaction_path(@user.id) %></li>
                 </ul>
             </nav>
         </div>
